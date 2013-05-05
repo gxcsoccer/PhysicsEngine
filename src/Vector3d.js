@@ -76,10 +76,18 @@ Vector3d.prototype = {
 		this.y -= v.y;
 		this.z -= v.z;
 	},
-	componentProduct: function(v) {
+	/**
+	 * 两个向量相乘
+	 */
+	multiply: function(v) {
 		return new Vector3d(this.x * v.x, 
 							this.y * v.y, 
 							this.z * v.z);
+	},
+	multiplyMutable: function(v) {
+		this.x *= v.x;
+		this.y *= v.y;
+		this.z *= v.z;
 	},
 	/**
 	 * 向量的点乘
