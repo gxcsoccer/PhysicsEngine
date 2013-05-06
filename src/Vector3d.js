@@ -27,6 +27,7 @@ Vector3d.prototype = {
 			this.y /= magnitude;
 			this.z /= magnitude;
 		}
+		return this;
 	},
 	/**
 	 * 向量和标量的乘法
@@ -43,6 +44,7 @@ Vector3d.prototype = {
 		this.x *= scalar;
 		this.y *= scalar;
 		this.z *= scalar;
+		return this;
 	},
 	/**
 	 * 向量的加法，返回一个新的向量
@@ -59,6 +61,7 @@ Vector3d.prototype = {
 		this.x += v.x;
 		this.y += v.y;
 		this.z += v.z;
+		return this;
 	},
 	/**
 	 * 向量的减法
@@ -75,6 +78,7 @@ Vector3d.prototype = {
 		this.x -= v.x;
 		this.y -= v.y;
 		this.z -= v.z;
+		return this;
 	},
 	/**
 	 * 两个向量相乘
@@ -88,6 +92,7 @@ Vector3d.prototype = {
 		this.x *= v.x;
 		this.y *= v.y;
 		this.z *= v.z;
+		return this;
 	},
 	/**
 	 * 向量的点乘
@@ -102,5 +107,14 @@ Vector3d.prototype = {
 		return new Vector3d(this.y * v.z - this.z * v.y,
                             this.z * v.x - this.x * v.z,
                             this.x * v.y - this.y * v.x);
+	},
+	/**
+	 * 加一个伸缩的向量
+	 */
+	addScaledVector: function(v, t) {
+		this.x += v.x * t;
+		this.y += v.y * t;
+		this.z += v.z * t;
+		return this;
 	}
 }
